@@ -18,7 +18,7 @@ const Header = () => (
   >
     <Container>
       <h1>🍕 Pizzería Mamma Mia</h1>
-      <p>Las mejores pizzas al mejor precio.</p>
+      <p>Tenemos las mejores pizzas que podrás encontrar!</p>
     </Container>
   </header>
 );
