@@ -1,19 +1,38 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+const CardPizza = ( {pizza}) => { 
 
-const CardPizza = ({ name, price, ingredients, img }) => (
-  <Card className="m-3 shadow-sm" style={{ width: "18rem" }}>
-    <Card.Img variant="top" src={img} alt={name} />
-    <Card.Body>
-      <Card.Title>{name}</Card.Title>
-      <Card.Text>
-        <strong>Precio:</strong> ${price.toLocaleString()} <br />
-        <strong>Ingredientes:</strong> {ingredients.join(", ")}
-      </Card.Text>
-      <Button variant="primary" className="me-2">Ver más</Button>
-      <Button variant="success">Añadir</Button>
-    </Card.Body>
-  </Card>
-);
+  const { name, img, price, ingredients, desc } = pizza
 
-export default CardPizza;
+  return(
+    <div className=" card h-100">
+      <img
+        src= {img}
+        className="card-img-top"
+        alt={name}
+        style={{height: "200px", objectFit: "cover"}}
+        />
+        <div className="card-body">
+          <h5 className="card-title text-capitalize"></h5>
+
+          <h6> Ingredientes</h6>
+          <ul>
+            {ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient} </li>
+            ))}
+          </ul>
+
+          <p className="card-text">{desc}</p>
+        </div>
+
+        <div className="card-footer d-flex justify-content-between align-items-center">
+          <span className="fw-bold">{price}</span>
+          <button className="btn btn-primary">
+            añadir al carro
+          </button>
+        </div>
+    </div>
+
+  )
+}
+
+export default CardPizza
