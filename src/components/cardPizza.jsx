@@ -27,7 +27,7 @@ const CardPizza = ( {pizza}) => {
         <div className="card-footer d-flex justify-content-between align-items-center">
           <span className="fw-bold">{price}</span>
           <button className="btn btn-primary">
-            añadir al carro
+            añadir al carrito
           </button>
         </div>
     </div>
